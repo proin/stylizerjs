@@ -1,0 +1,121 @@
+/* Basic CSS */
+html {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	-webkit-text-size-adjust: 100%;
+		-ms-text-size-adjust: 100%;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1;
+	width: 100%;
+}
+
+context {
+	display: block;
+	margin: 20px;
+}
+
+a {
+	color: #428bca;
+	text-decoration: none;
+}
+a:hover,
+a:focus {
+	color: #2a6496;
+	text-decoration: underline;
+}
+a:focus {
+	outline: thin dotted;
+	outline: 5px auto -webkit-focus-ring-color;
+	outline-offset: -2px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: inherit;
+	font-weight: 500;
+	line-height: 1.4;
+	margin: 15px 0 15px 0;
+	padding: 0;
+}
+
+h1 {
+	font-size: 40px;
+}
+h2 {
+	font-size: 34px;
+	border-bottom: 1px solid #46b8da;
+}
+h3 {
+	font-size: 30px;
+}
+h4 {
+	font-size: 26px;
+}
+h5 {
+	font-size: 22px;
+}
+h6 {
+	font-size: 18px;
+}
+
+h1 > small,
+h2 > small,
+h3 > small,
+h4 > small,
+h5 > small,
+h6 > small {
+	font-weight: normal;
+	line-height: 1;
+	font-size: 75%;
+	color: #999;
+}
+
+p {
+	line-height: 1.4;
+}
+
+mark {
+	background: #ffc;
+}
+
+hr {
+	border: 0;
+	border-top: 1px solid #46b8da;
+	height: 0;
+	width: 100%;
+	-moz-box-sizing: content-box;
+	   box-sizing: content-box;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+blockquote {
+	padding: 1px 0px 17px 10px;
+	margin: 0px;
+	font-size: 16px;
+	background: #eee;
+	border-left: 10px solid #aaa;
+}
+
+blockquote > footer {
+	font-size: 14px;
+}
+
+blockquote > footer:before {
+	content: '\2014 \00A0';
+}
+
+/* Set Basic CSS */
+blockquote {
+	background: #d0ebf2;
+	border-left: 10px solid #8bcede;
+}
+
+code {
+	display: block;
+}

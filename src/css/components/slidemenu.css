@@ -1,0 +1,19 @@
+slidemenu {
+	width: 30%;
+	height: 100%;
+	position: fixed;
+	visibility: hidden;
+	z-index: 600;
+	top: 0;
+}
+
+slidemenu[slidemenu-status="active"] {
+	visibility: visible;
+}
+
+/* Basic CSS */
+slidemenu {
+	background-color: #d0ebf2;
+	color: #fff;
+	border-right: 1px solid #8bcede; 
+}

@@ -1,0 +1,53 @@
+tab {
+	display: table;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	vertical-align: middle;
+	height: 35px;
+	word-break:break-all;
+}
+
+tab > menu {
+	width: 1%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+}
+
+tabcontent {
+	margin: 0;
+	padding: 0;
+	display: block;
+	width: 100%;
+}
+
+tabcontent > menu {
+	margin: 0;
+	padding: 0;
+	position: fixed;
+	visibility: hidden;
+	width: 100%;
+}
+
+tabcontent > menu[tab-status="active"] {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	position: relative;
+	visibility: visible;
+}
+
+/* Set Basic CSS */
+tab {
+	background-color: #d0ebf2;
+	color: #fff;
+}
+
+tab > menu[tab-status="active"] {
+	background-color: #8bcede;
+}

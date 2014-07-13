@@ -1,0 +1,69 @@
+button,
+button:focus {
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+			user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+button:focus,
+button:active:focus {
+	outline: thin dotted;
+	outline: 0px auto -webkit-focus-ring-color;
+	outline-offset: -2px;
+}
+
+button:active {
+	background-image: none;
+	outline: 0;
+	-webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+	      box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+	opacity: .65;
+}
+
+button[disabled] {
+	pointer-events: none;
+	cursor: not-allowed;
+	filter: alpha(opacity=50);
+	-webkit-box-shadow: none;
+	      box-shadow: none;
+	opacity: .5;
+}
+
+/* Set Basic CSS */
+button.btn-sm {
+	padding: 4px 8px;
+	margin-bottom: 0;
+	font-size: 8px;
+}
+
+button,
+button:focus,
+button:active:focus {
+	color: #fff;
+	background-color: #5bc0de;
+	border-color: #46b8da;
+}
+
+button:hover {
+	color: #fff;
+	background-color: #39b3d7;
+	border-color: #269abc;
+}
+
+button:active {
+	opacity: .65;
+}

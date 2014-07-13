@@ -1,0 +1,14 @@
+grid {
+	display: table;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+grid > column {
+	display: inline-block;
+	word-break: break-all;
+	vertical-align: top;
+	margin: 0;
+	padding: 0;
+}

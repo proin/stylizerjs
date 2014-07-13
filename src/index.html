@@ -1,0 +1,555 @@
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>Stylizer JS</title>
+	<!-- Import UI CSS -->
+	<link rel="stylesheet" href="./css/basics/basic.css">
+	<link rel="stylesheet" href="./css/basics/button.css">
+	<link rel="stylesheet" href="./css/basics/dialog.css">
+	<link rel="stylesheet" href="./css/basics/input.css">
+	<link rel="stylesheet" href="./css/basics/navibar.css">
+	<link rel="stylesheet" href="./css/basics/panel.css">
+	<link rel="stylesheet" href="./css/basics/select.css">
+	<link rel="stylesheet" href="./css/basics/table.css">
+	<link rel="stylesheet" href="./css/components/tab.css">
+	<link rel="stylesheet" href="./css/components/grid.css">
+	
+	<script src="./js/jquery-2.1.1.min.js"></script>
+	<!-- Import UI JS -->
+	<script src="./js/components/stylizerjs.js"></script>
+	<script src="./js/components/code.js"></script>
+	<script src="./js/components/theme.js"></script>
+	<script src="./js/components/fixed.js"></script>
+	<script src="./js/components/grid.js"></script>
+	<script src="./js/components/tab.js"></script>
+	<!-- Import Theme -->
+	<script src="./theme/theme-sample.js"></script>
+	<script src="./theme/pastel-blue.js"></script>
+	<script src="./theme/stylizer.js"></script>
+</head>
+<body inner-theme="pastel-blue">
+	<navibar fixed="navibar">
+		<navibar-title>Stylizer JS</navibar-title>
+	</navibar>
+
+	<tab tab-id="main-tab" fixed="tab">
+		<menu tab-id="basic" tab-status="active">Basic CSS</menu>
+		<menu tab-id="components">Components</menu>
+		<menu tab-id="theme">Theme</menu>
+	</tab>
+
+	<tabcontent tab-id="main-tab">
+		<menu tab-id="basic">
+			<context>
+				<panel>
+					<header>
+						Headings
+					</header>
+					<content>
+						<h1>Heading 1 <small>something text</small></h1>
+						<h2>Heading 2 <small>something text</small></h2>
+						<h3>Heading 3 <small>something text</small></h3>
+						<h4>Heading 4 <small>something text</small></h4>
+						<h5>Heading 5 <small>something text</small></h5>
+						<h6>Heading 6 <small>something text</small></h6>
+					</content>
+					<footer>
+						Code
+						<hr/>
+						<code>
+							<h1>Heading 1 <small>something text</small></h1>
+							<h2>Heading 2 <small>something text</small></h2>
+							<h3>Heading 3 <small>something text</small></h3>
+							<h4>Heading 4 <small>something text</small></h4>
+							<h5>Heading 5 <small>something text</small></h5>
+							<h6>Heading 6 <small>something text</small></h6>
+						</code>
+					</footer>
+				</panel>
+
+				<br>
+
+				<panel>
+					<header>
+						Blockquote
+					</header>
+					<content>
+						<blockquote>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+							<footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+						</blockquote>
+					</content>
+					<footer>
+						Code
+						<hr/>
+						<code>
+							<blockquote>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+								<footer>
+									This is Footer
+								</footer>
+							</blockquote>
+						</code>
+					</footer>
+				</panel>
+
+				<br>
+
+				<panel>
+					<header>
+						Buttons
+					</header>
+					<content>
+						<button>Sample</button>
+						<button disabled>Sample</button>
+					</content>
+					<footer>
+						Code
+						<hr/>
+						<code>
+							<button>Sample</button>
+							<button disabled>Sample</button>
+						</code>
+					</footer>
+				</panel>
+
+				<br>
+
+				<panel>
+					<header>
+						Inputs
+					</header>
+					<content>
+						<input style="text" placeholder="Input Somthing">
+						<br>
+						<select>
+							<option>Option 1</option>
+							<option>Option 2</option>
+							<option>Option 3</option>
+						</select>
+					</content>
+					<footer>
+						Code
+						<hr/>
+						<code>
+							<input style="text" placeholder="Input Somthing">
+							<br>
+							<select>
+								<option>Option 1</option>
+								<option>Option 2</option>
+								<option>Option 3</option>
+							</select>
+						</code>
+					</footer>
+				</panel>
+
+				<br>
+
+				<panel>
+					<header>
+						Table
+					</header>
+					<content>
+						<table>
+							<thead><tr><th>1</th><th>2</th><th>3</th></tr></thead>
+							<tbody>
+								<tr>
+									<td>table-row-1-col-1</td>
+									<td>table-row-1-col-2</td>
+									<td>table-row-1-col-3</td>
+								</tr>
+								<tr>
+									<td colspan="2">table-row-2-col-1</td>
+									<td>table-row-2-col-2</td>
+								</tr>
+								<tr>
+									<td>table-row-3-col-1</td>
+									<td>table-row-3-col-2</td>
+									<td>table-row-3-col-3</td>
+								</tr>
+							</tbody>
+						</table>
+					</content>
+					<footer>
+						Code
+						<hr/>
+						<code>
+							<table>
+								<thead><tr><th>1</th><th>2</th><th>3</th></tr></thead>
+								<tbody>
+									<tr>
+										<td>table-row-1-col-1</td>
+										<td>table-row-1-col-2</td>
+										<td>table-row-1-col-3</td>
+									</tr>
+									<tr>
+										<td colspan="2">table-row-2-col-1</td>
+										<td>table-row-2-col-2</td>
+									</tr>
+									<tr>
+										<td>table-row-3-col-1</td>
+										<td>table-row-3-col-2</td>
+										<td>table-row-3-col-3</td>
+									</tr>
+								</tbody>
+							</table>
+						</code>
+					</footer>
+				</panel>
+			</context>
+		</menu>
+
+		<menu tab-id="components">
+			<context>
+
+				<h2>Components</h2>
+
+				Now Stylizer offers components only Grid, Tab, Panel, Fixed UI, Code. <br>
+				We are preparing another components like Dialog, Slide Menu, Navibar and so on.<br>
+				We will update as soon as possible.
+
+				<hr>
+
+				<panel>
+					<header>
+						Grid
+					</header>
+					<content>
+						<grid>
+							<column colspan="1">
+								colspan 1
+							</column>
+							<column colspan="2">
+								colspan 2
+							</column>
+							<column colspan="4">
+								colspan 4
+							</column>
+							<column colspan="6">
+								colspan 6
+							</column>
+						</grid>
+					</content>
+					<footer>
+						Code
+						<hr/>
+						<code>
+							<grid>
+								<column colspan="1">
+									colspan 1
+								</column>
+								<column colspan="2">
+									colspan 2
+								</column>
+								<column colspan="4">
+									colspan 4
+								</column>
+								<column colspan="6">
+									colspan 6
+								</column>
+							</grid>
+						</code>
+					</footer>
+				</panel>
+
+				<br>
+
+				<panel>
+					<header>
+						Tab
+					</header>
+					<content>
+						<tab tab-id="myTab">
+							<menu tab-id="tab1" tab-status="active">tab 1</menu>
+							<menu tab-id="tab2">tab 2</menu>
+							<menu tab-id="tab3">tab 3</menu>
+						</tab>
+						<tabcontent tab-id="myTab">
+							<menu tab-id="tab1">tab 1 contents</menu>
+							<menu tab-id="tab2">tab 2 contents</menu>
+							<menu tab-id="tab3">tab 3 contents</menu>
+						</tabcontent>
+					</content>
+					<footer>
+						Code
+						<hr/>
+						<code>
+							<tab tab-id="myTab">
+								<menu tab-id="tab1" tab-status="active">tab 1</menu>
+								<menu tab-id="tab2">tab 2</menu>
+								<menu tab-id="tab3">tab 3</menu>
+							</tab>
+							<tabcontent tab-id="myTab">
+								<menu tab-id="tab1">tab 1 contents</menu>
+								<menu tab-id="tab2">tab 2 contents</menu>
+								<menu tab-id="tab3">tab 3 contents</menu>
+							</tabcontent>
+						</code>
+					</footer>
+				</panel>
+
+				<br>
+
+				<panel>
+					<header>
+						Panel
+					</header>
+					<content>
+						<panel>
+							<header>
+								Panel Header
+							</header>
+							<content>
+								Panel Contents
+							</content>
+							<footer>
+								Panel Footer
+							</footer>
+						</panel>
+					</content>
+					<footer>
+						Code
+						<hr/>
+						<code>
+							<panel>
+								<header>
+									Panel Header
+								</header>
+								<content>
+									Panel Contents
+								</content>
+								<footer>
+									Panel Footer
+								</footer>
+							</panel>
+						</code>
+					</footer>
+				</panel>
+
+				<br>
+
+				<panel>
+					<header>
+						Fixed UI
+					</header>
+					<content>
+						Fixed UI fixed your UI components very easily by using fixed attribute.<br>
+						Adding fixed attribute at your html tag and set value which is unique component id.
+					</content>
+					<footer>
+						Code
+						<hr/>
+						<code>
+							<tab tab-id="sometab" fixed="tab">
+								<menu tab-id="basic" tab-status="active">Basic CSS</menu>
+								<menu tab-id="components">Components</menu>
+								<menu tab-id="theme">Theme</menu>
+							</tab>
+						</code>
+					</footer>
+				</panel>
+
+				<br>
+
+				<panel>
+					<header>
+						Code
+					</header>
+					<content>
+						<code>
+							<div>div tag</div>
+						</code>
+						<hr>
+						This component is automatically convert html code to entity code in code tag like this.
+					</content>
+					<footer>
+						Code
+						<hr/>
+						<code>
+							<code>
+								<div>div tag</div>
+							</code>
+						</code>
+					</footer>
+				</panel>
+
+			</context>
+		</menu>
+
+		<menu tab-id="theme">
+			<context>
+				<panel>
+					<header>
+						Apply Theme
+					</header>
+					<context>
+						<code>
+							<button theme="myTheme">Button</button>
+						</code>
+					</context>
+					<footer>
+						theme file code
+						<hr/>	
+						<code>
+							color = '#d45151'
+							color_text = '#fff'
+
+							color_body = '#fff'
+
+							color_sub = '#f9f9f9'
+							color_sub_text = '#000'
+
+							color_hover = '#a00'
+							color_border = '#a00'
+
+							stylizerjs.theme.push(
+								{
+									'name' : 'myTheme',
+									'tab' : {
+										'default' : {
+											'background-color' : color,
+											'color' : color_text
+										},
+										'in-active' : {
+											'background-color' : color_sub,
+											'color' : color_sub_text
+										}
+									},
+									'button' : {
+										'default' : {
+											'background-color' : color,
+											'color' : color_text,
+											'border-color' : color
+										},
+										'hover' : {
+											'background-color' : color_hover,
+											'color' : color_text,
+											'border-color' : color_hover
+										}
+									},
+									'panel' : {
+										'header' : {
+											'background-color' : color,
+											'color' : color_text
+										},
+										'body' : {
+											'background-color' : color_body,
+											'color' : color_sub_text,
+											'border-color' : color
+										},
+										'footer' : {
+											'background-color' : color_sub,
+											'color' : color_sub_text
+										}
+									},
+									'table' : {
+										'wrapper' : {
+											'border' : '1px solid ' + color,
+											'color' : color_sub_text,
+											'background-color' : color_body
+										},
+										'header' : {
+											'background-color' : color,
+											'color' : color_text
+										},
+										'odd-row' : {
+											'background-color' : color_sub
+										}
+									},
+									'basics' : {
+										'blockquote' : {
+											'background-color' : color_sub,
+											'color' : color_sub_text,
+											'border-left' : '10px solid ' + color
+										}
+									}
+
+								}
+							);
+						</code>
+					</footer>
+				</panel>
+				
+				<br/>
+
+				<panel>
+					<header>Inner Theme</header>
+					<content>
+						<div inner-theme="myTheme">
+							<tab tab-id="myTab2">
+								<menu tab-id="tab1" tab-status="active">tab 1</menu>
+								<menu tab-id="tab2">tab 2</menu>
+								<menu tab-id="tab3">tab 3</menu>
+							</tab>
+							<tabcontent tab-id="myTab2">
+								<menu tab-id="tab1"><button theme="myTheme">Button</button></menu>
+								<menu tab-id="tab2">
+									<table>
+										<thead><tr><th>1</th><th>2</th><th>3</th></tr></thead>
+										<tbody>
+											<tr>
+												<td>table-row-1-col-1</td>
+												<td>table-row-1-col-2</td>
+												<td>table-row-1-col-3</td>
+											</tr>
+											<tr>
+												<td colspan="2">table-row-2-col-1</td>
+												<td>table-row-2-col-2</td>
+											</tr>
+											<tr>
+												<td>table-row-3-col-1</td>
+												<td>table-row-3-col-2</td>
+												<td>table-row-3-col-3</td>
+											</tr>
+										</tbody>
+									</table>
+								</menu>
+								<menu tab-id="tab3">tab 3 contents</menu>
+							</tabcontent>					
+						</div>
+					</content>
+					<footer>
+						Apply Code
+						<hr>
+						<code>
+							<div inner-theme="myTheme">
+								<tab tab-id="myTab2">
+									<menu tab-id="tab1" tab-status="active">tab 1</menu>
+									<menu tab-id="tab2">tab 2</menu>
+									<menu tab-id="tab3">tab 3</menu>
+								</tab>
+								<tabcontent tab-id="myTab2">
+									<menu tab-id="tab1"><button theme="myTheme">Button</button></menu>
+									<menu tab-id="tab2">
+										<table>
+											<thead><tr><th>1</th><th>2</th><th>3</th></tr></thead>
+											<tbody>
+												<tr>
+													<td>table-row-1-col-1</td>
+													<td>table-row-1-col-2</td>
+													<td>table-row-1-col-3</td>
+												</tr>
+												<tr>
+													<td colspan="2">table-row-2-col-1</td>
+													<td>table-row-2-col-2</td>
+												</tr>
+												<tr>
+													<td>table-row-3-col-1</td>
+													<td>table-row-3-col-2</td>
+													<td>table-row-3-col-3</td>
+												</tr>
+											</tbody>
+										</table>
+									</menu>
+									<menu tab-id="tab3">tab 3 contents</menu>
+								</tabcontent>					
+							</div>
+						</code>						
+					</footer>
+				</panel>
+
+			</context>
+		</menu>
+	</tabcontent>
+</body>
+</html>

@@ -1,0 +1,31 @@
+/* Panel */
+panel {
+	background-color: #fff;
+	border: 1px solid #ddd;
+	display: block;
+	margin: 0px;
+	vertical-align: middle;
+}
+
+panel > header {
+	display: block;
+	font-size: 24px;
+	padding: 12px;
+}
+
+panel > content {
+	display: block;
+	padding: 12px;
+}
+
+panel > footer {
+	background-color: #eee;
+	display: block;
+	padding: 12px;
+}
+
+/* Set Basic CSS */
+panel > header {
+	color: #fff;
+	background-color: #8bcede;
+}
