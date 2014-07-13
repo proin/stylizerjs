@@ -326,6 +326,7 @@ popup-container {
 
 popup {
 	width: 70%;
+	left: 15%;
 	background-color: #fff;
 	border: 1px solid #80ccc8;
 	display: inline-block;
@@ -361,6 +362,14 @@ popup > footer {
 	border-radius: 0px 0px 8px 8px;
 	vertical-align: middle;
 	text-align: right;
+}
+
+popup tabcontent > menu[tab-status="active"] {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	position: relative;
+	visibility: inherit;
 }
 
 /* slidemenu.css */

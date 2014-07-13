@@ -160,46 +160,42 @@ stylizerjs.grid = new function() {
 
 /* popup.js */
 stylizerjs.popup = new function() {
-	this.popups = new Object();
-
 	this.create = function() {
 		$('body').append('<popup-container></popup-container>');
 
 		$('popup[popup-id]').each(function(){
-			stylizerjs.popup.popups[$(this).attr('popup-id')] = $(this).clone();
-			$(this).remove();
+			$('popup-container').append($(this));
+			$(this).attr('style','visibility:hidden;position:absolute;');
 		});
 
 		$('popup-container').attr('style','visibility:hidden;');
 
 		$('[popup-href]').each(function() {
 			$(this).click(function() {
-				stylizerjs.popup.visible(stylizerjs.popup.popups[$(this).attr('popup-href')]);
+				stylizerjs.popup.visible($('popup[popup-id="'+$(this).attr('popup-href')+'"]'));
 			});
 		});
 	}
 
 	this.visible = function(jqueryObj) {
 		$('popup-container').attr('style','visibility:visible;');
-		$('popup-container').append(jqueryObj);
+		jqueryObj.attr('style','visibility:visible;position:absolute;');
+
 		$('body').css('overflow','hidden');
 
 		stylizerjs._theme.popup(jqueryObj);
+		stylizerjs._theme.create();
 
 		$('[dismiss-popup]').each(function(){
 			$(this).click(function() {
-				stylizerjs.popup.hidden();
+				stylizerjs.popup.hidden(jqueryObj);
 			});
-		});
-
-		$('popup-container').click(function() {
-			stylizerjs.popup.hidden();
 		});
 	}
 
-	this.hidden = function() {
+	this.hidden = function(jqueryObj) {
 		$('popup-container').attr('style','visibility:hidden;');
-		$('popup-container').html('');
+		jqueryObj.attr('style','visibility:hidden;');
 		$('body').css('overflow','scroll');
 	}
 }
@@ -207,20 +203,16 @@ stylizerjs.popup = new function() {
 /* tab.js */
 stylizerjs.tab = new function() {
 	this.create = function() {
-		var _check = true;
 		$('tab').each(function(){
 			var _tab_name = $(this).attr('tab-id');
 			if(_tab_name!=null) {
 				$('tab[tab-id="'+_tab_name+'"] > menu').each(function(){
 					var _menu_name = $(this).attr('tab-id');
 					
-					if(_check) {
-						if($(this).attr('tab-status') == 'active') {
-							stylizerjs.tab.selectTab(_tab_name, _menu_name);
-							_check = false;
-						}
+					if($(this).attr('tab-status') == 'active') {
+						stylizerjs.tab.selectTab(_tab_name, _menu_name);
 					}
-	
+					
 					// Tab Menu Clicked
 					$(this).click(function(){
 						stylizerjs.tab.selectTab(_tab_name, _menu_name);

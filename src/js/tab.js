@@ -1,19 +1,15 @@
 stylizerjs.tab = new function() {
 	this.create = function() {
-		var _check = true;
 		$('tab').each(function(){
 			var _tab_name = $(this).attr('tab-id');
 			if(_tab_name!=null) {
 				$('tab[tab-id="'+_tab_name+'"] > menu').each(function(){
 					var _menu_name = $(this).attr('tab-id');
 					
-					if(_check) {
-						if($(this).attr('tab-status') == 'active') {
-							stylizerjs.tab.selectTab(_tab_name, _menu_name);
-							_check = false;
-						}
+					if($(this).attr('tab-status') == 'active') {
+						stylizerjs.tab.selectTab(_tab_name, _menu_name);
 					}
-	
+					
 					// Tab Menu Clicked
 					$(this).click(function(){
 						stylizerjs.tab.selectTab(_tab_name, _menu_name);
