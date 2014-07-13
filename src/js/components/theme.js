@@ -74,6 +74,12 @@ stylizerjs._theme = new function() {
 		}, function() {
 			stylizerjs._theme.setTheme(themeName,jqueryObj,'button','default');
 		});
+
+		if(jqueryObj.attr('href') != null) {
+			jqueryObj.click(function() {
+				window.open(jqueryObj.attr('href'));
+			});
+		}
 	}
 
 	this.panel = function(jqueryObj) {

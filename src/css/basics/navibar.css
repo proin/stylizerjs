@@ -1,27 +1,28 @@
-navibar {
+nav {
 	vertical-align: middle;
 	height: 45px;
 	display: block;
 	margin: 0;
 	padding: 0;
+	background-color: #80ccc8;
+	color: #fff;
 }
 
-navibar > navibar-title {
+nav > nav-title {
 	vertical-align: middle!important;
 	display: inline-block;
 	padding: 10px;
 	font-size: 25px;
+	cursor: pointer;
 }
 
-navibar > navibar-right {
+nav > nav-title:hover {
+	color: #efefef;
+}
+
+nav > nav-right {
 	padding: 4px;
 	vertical-align: middle!important;
 	display: inline-block;
 	float: right;
-}
-
-/* Set Basic Color */
-navibar {
-	background-color: #80ccc8;
-	color: #fff;
 }
