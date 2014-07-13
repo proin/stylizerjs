@@ -19,7 +19,7 @@ stylizerjs.code = new function() {
 				firstTabCount = tabCount;
 			} else {
 				for(var j=0;j<tabCount-firstTabCount;j++)
-					html += '&nbsp;&nbsp;';
+					html += '&nbsp;&nbsp;&nbsp;&nbsp;';
 				html += $(obj).text(splittext[i]).html();
 			}
 
