@@ -8,7 +8,7 @@ nav {
 	color: #fff;
 }
 
-nav > nav-title {
+nav > title {
 	vertical-align: middle!important;
 	display: inline-block;
 	padding: 10px;
@@ -17,7 +17,7 @@ nav > nav-title {
 	float: left;
 }
 
-nav > nav-title:hover {
+nav > title:hover {
 	color: #efefef;
 }
 

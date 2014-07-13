@@ -17,6 +17,7 @@ var stylizerjs = new function() {
 		this.tab.create();
 		this.grid.create();
 		this.fixed.create();
+		this.popup.create();
 	}
 
 	this._resize = function() {
@@ -157,12 +158,49 @@ stylizerjs.grid = new function() {
 	}
 }
 
-/* nav.js */
-stylizerjs.nav = new function() {
+/* popup.js */
+stylizerjs.popup = new function() {
+	this.popups = new Object();
+
 	this.create = function() {
-		$('nav').each(function() {
-			
+		$('body').append('<popup-container></popup-container>');
+
+		$('popup[popup-id]').each(function(){
+			stylizerjs.popup.popups[$(this).attr('popup-id')] = $(this).clone();
+			$(this).remove();
 		});
+
+		$('popup-container').attr('style','visibility:hidden;');
+
+		$('[popup-href]').each(function() {
+			$(this).click(function() {
+				stylizerjs.popup.visible(stylizerjs.popup.popups[$(this).attr('popup-href')]);
+			});
+		});
+	}
+
+	this.visible = function(jqueryObj) {
+		$('popup-container').attr('style','visibility:visible;');
+		$('popup-container').append(jqueryObj);
+		$('body').css('overflow','hidden');
+
+		stylizerjs._theme.popup(jqueryObj);
+
+		$('[dismiss-popup]').each(function(){
+			$(this).click(function() {
+				stylizerjs.popup.hidden();
+			});
+		});
+
+		$('popup-container').click(function() {
+			stylizerjs.popup.hidden();
+		});
+	}
+
+	this.hidden = function() {
+		$('popup-container').attr('style','visibility:hidden;');
+		$('popup-container').html('');
+		$('body').css('overflow','scroll');
 	}
 }
 
@@ -279,7 +317,7 @@ stylizerjs._theme = new function() {
 		if(themeName == null) 
 			return;
 
-		var components = ['button','panel','table','tab','nav'];
+		var components = ['button','panel','table','tab','nav','popup'];
 		for(var i=0; i<components.length;i++) {
 			jqueryObj.find(components[i]).each(function() {
 				var setAvailable = true;
@@ -368,9 +406,17 @@ stylizerjs._theme = new function() {
 		stylizerjs._theme.setTheme(themeName,jqueryObj.find('> menu[tab-status="active"]'),'tab','default');
 	}
 
+	this.popup = function(jqueryObj) {
+		var themeName = jqueryObj.attr('theme');
+		
+		stylizerjs._theme.setTheme(themeName,jqueryObj,'popup','body');
+		stylizerjs._theme.setTheme(themeName,jqueryObj.find('> header'),'popup','header');
+		stylizerjs._theme.setTheme(themeName,jqueryObj.find('> footer'),'popup','footer');
+	}
+
 	this.nav = function(jqueryObj) {
 		var themeName = jqueryObj.attr('theme');
-		var titleObj = jqueryObj.find('> nav-title');
+		var titleObj = jqueryObj.find('> title');
 
 		stylizerjs._theme.setTheme(themeName,jqueryObj,'nav','nav');
 		

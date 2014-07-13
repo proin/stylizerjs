@@ -32,7 +32,7 @@ stylizerjs._theme = new function() {
 		if(themeName == null) 
 			return;
 
-		var components = ['button','panel','table','tab','nav'];
+		var components = ['button','panel','table','tab','nav','popup'];
 		for(var i=0; i<components.length;i++) {
 			jqueryObj.find(components[i]).each(function() {
 				var setAvailable = true;
@@ -121,9 +121,17 @@ stylizerjs._theme = new function() {
 		stylizerjs._theme.setTheme(themeName,jqueryObj.find('> menu[tab-status="active"]'),'tab','default');
 	}
 
+	this.popup = function(jqueryObj) {
+		var themeName = jqueryObj.attr('theme');
+		
+		stylizerjs._theme.setTheme(themeName,jqueryObj,'popup','body');
+		stylizerjs._theme.setTheme(themeName,jqueryObj.find('> header'),'popup','header');
+		stylizerjs._theme.setTheme(themeName,jqueryObj.find('> footer'),'popup','footer');
+	}
+
 	this.nav = function(jqueryObj) {
 		var themeName = jqueryObj.attr('theme');
-		var titleObj = jqueryObj.find('> nav-title');
+		var titleObj = jqueryObj.find('> title');
 
 		stylizerjs._theme.setTheme(themeName,jqueryObj,'nav','nav');
 		

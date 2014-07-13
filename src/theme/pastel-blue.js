@@ -78,6 +78,21 @@ stylizerjs.theme.push(
 			'color' : color_sky_blue_2
 		}
 	},
+	'popup' : {
+		'header' : {
+			'background-color' : color_green_blue,
+			'color' : text_color_white
+		},
+		'body' : {
+			'background-color' : color_white,
+			'color' : text_color_black,
+			'border-color' : color_green_blue
+		},
+		'footer' : {
+			'background-color' : color_sky_blue_2,
+			'color' : text_color_black
+		}
+	},
 	'basics' : {
 		'blockquote' : {
 			'background-color' : color_sky_blue,
