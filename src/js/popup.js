@@ -35,6 +35,6 @@ stylizerjs.popup = new function() {
 	this.hidden = function(jqueryObj) {
 		$('popup-container').attr('style','visibility:hidden;');
 		jqueryObj.attr('style','visibility:hidden;');
-		$('body').css('overflow','scroll');
+		$('body').removeAttr('style');
 	}
 }
