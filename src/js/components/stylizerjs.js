@@ -1,15 +1,17 @@
 $(document).ready(function() {
-	stylizerjs.init();
+	stylizerjs._init();
+	stylizerjs.ready();
 });
 
 $( window ).resize(function() {
+	stylizerjs._resize();
 	stylizerjs.resize();
 });
 
 var stylizerjs = new function() {
 	this.theme = [];
 
-	this.init = function() {
+	this._init = function() {
 		this.code.create();
 		this._theme.create();
 		this.tab.create();
@@ -17,7 +19,7 @@ var stylizerjs = new function() {
 		this.fixed.create();
 	}
 
-	this.resize = function() {
+	this._resize = function() {
 		this.grid.create();
 		this.fixed.resize();
 	}
@@ -49,5 +51,11 @@ var stylizerjs = new function() {
 			if(_target.attributes[i].nodeName == _attrName)
 				return true;
 		return false;
+	}
+
+	this.ready = function() {
+	}
+
+	this.resize = function() {
 	}
 }
