@@ -186,7 +186,6 @@ stylizerjs.popup = new function() {
 		$('body').css('overflow','hidden');
 
 		stylizerjs._theme.popup(jqueryObj);
-		stylizerjs._theme.create();
 
 		$('[dismiss-popup]').each(function(){
 			$(this).click(function() {
