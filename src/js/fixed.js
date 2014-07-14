@@ -22,7 +22,7 @@ stylizerjs.fixed = new function() {
 					$(clone).html($(this).html());
 					$(this).width($(clone).width());
 					$(this).height($(clone).height());
-					$(this).css('z-index',200);
+					$(this).css('z-index',1000);
 				}
 			});
 		});

@@ -18,6 +18,7 @@ var stylizerjs = new function() {
 		this.grid.create();
 		this.fixed.create();
 		this.popup.create();
+		this.slide.create();
 	}
 
 	this._resize = function() {

@@ -17,6 +17,7 @@ tab > menu {
 	display: table-cell;
 	text-align: center;
 	vertical-align: middle;
+	cursor: pointer;
 }
 
 tabcontent {

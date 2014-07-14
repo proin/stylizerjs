@@ -93,6 +93,16 @@ stylizerjs.theme.push(
 			'color' : text_color_black
 		}
 	},
+	'slide' : {
+		'header' : {
+			'background-color' : color_green_blue,
+			'color' : text_color_white
+		},
+		'body' : {
+			'background-color' : color_sky_blue_2,
+			'color' : text_color_black
+		}
+	},
 	'basics' : {
 		'blockquote' : {
 			'background-color' : color_sky_blue,

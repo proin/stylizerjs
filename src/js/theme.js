@@ -32,7 +32,7 @@ stylizerjs._theme = new function() {
 		if(themeName == null) 
 			return;
 
-		var components = ['button','panel','table','tab','nav','popup'];
+		var components = ['button','panel','table','tab','nav','popup','slide'];
 		for(var i=0; i<components.length;i++) {
 			jqueryObj.find(components[i]).each(function() {
 				var setAvailable = true;
@@ -127,6 +127,13 @@ stylizerjs._theme = new function() {
 		stylizerjs._theme.setTheme(themeName,jqueryObj,'popup','body');
 		stylizerjs._theme.setTheme(themeName,jqueryObj.find('> header'),'popup','header');
 		stylizerjs._theme.setTheme(themeName,jqueryObj.find('> footer'),'popup','footer');
+	}
+
+	this.slide = function(jqueryObj) {
+		var themeName = jqueryObj.attr('theme');
+		
+		stylizerjs._theme.setTheme(themeName,jqueryObj,'slide','body');
+		stylizerjs._theme.setTheme(themeName,jqueryObj.find('> header'),'slide','header');
 	}
 
 	this.nav = function(jqueryObj) {

@@ -310,7 +310,7 @@ panel > header {
 }
 
 /* popup.css */
-/* Panel */
+/* Popup */
 popup-container {
 	width: 100%;
 	height: 100%;
@@ -320,7 +320,7 @@ popup-container {
 	background-color: rgba(0,0,0,0.7);
 	top: 0;
 	left: 0;
-	z-index: 300;
+	z-index: 1200;
 	overflow: scroll;
 }
 
@@ -330,11 +330,11 @@ popup-dissmiss-panel {
 	position: fixed;
 	top: 0;
 	left: 0;
-	z-index: 300;
+	z-index: 1200;
 }
 
 popup {
-	z-index: 301;
+	z-index: 1201;
 	width: 70%;
 	left: 15%;
 	background-color: #fff;
@@ -366,7 +366,7 @@ popup > content {
 }
 
 popup > footer {
-	background-color: #eee;
+	background-color: rgb(231,245,248);
 	display: block;
 	padding: 12px;
 	border-radius: 0px 0px 8px 8px;
@@ -382,25 +382,73 @@ popup tabcontent > menu[tab-status="active"] {
 	visibility: inherit;
 }
 
-/* slidemenu.css */
-slidemenu {
-	width: 30%;
+/* slide.css */
+/* Slide */
+slide-container {
+	width: 100%;
 	height: 100%;
 	position: fixed;
-	visibility: hidden;
-	z-index: 600;
+	vertical-align: middle;
+	text-align: center;
+	background-color: rgba(0,0,0,0.7);
 	top: 0;
+	left: 0;
+	z-index: 1100;
+	overflow-x: hidden;
+	overflow-y: auto;
 }
 
-slidemenu[slidemenu-status="active"] {
-	visibility: visible;
+slide-dissmiss-panel {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1100;
 }
 
-/* Basic CSS */
-slidemenu {
-	background-color: #d0ebf2;
+slide {
+	z-index: 1101;
+	width: 30;
+	min-height: 100%;
+	float: left;
+	background-color: rgb(231,245,248);
+	position: relative;
+	left: 0;
+	top: 0;
+	text-align: justify;
+	box-shadow: 7px 7px 7px silver;
+		-moz-box-shadow:7px 7px 7px silver;
+		-webkit-box-shadow:7px 7px 7px silver;
+		filter:progid:DXImageTransform.Microsoft.Shadow(color=silver,direction=135, strength=20);
+}
+
+@media (max-width: 768px) {
+	slide {
+		width: 70;
+	}	
+}
+
+slide > header {
+	display: block;
+	font-size: 20px;
+	padding: 8px;
+	background-color: #80ccc8;
 	color: #fff;
-	border-right: 1px solid #8bcede; 
+	vertical-align: middle;
+}
+
+slide > content {
+	display: block;
+	padding: 12px 12px 24px 12px;
+}
+
+slide tabcontent > menu[tab-status="active"] {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	position: relative;
+	visibility: inherit;
 }
 
 /* tab.css */
@@ -423,6 +471,7 @@ tab > menu {
 	display: table-cell;
 	text-align: center;
 	vertical-align: middle;
+	cursor: pointer;
 }
 
 tabcontent {

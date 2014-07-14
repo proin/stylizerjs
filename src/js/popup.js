@@ -1,8 +1,7 @@
 stylizerjs.popup = new function() {
 	this.create = function() {
 		$('body').append('<popup-container></popup-container>');
-
-		$('popup-container').append('<popup-dissmiss-panel></popup-dissmiss-panel>')
+		$('popup-container').append('<popup-dissmiss-panel></popup-dissmiss-panel>');
 
 		$('popup[popup-id]').each(function(){
 			$('popup-container').append($(this));
