@@ -15,13 +15,16 @@ var stylizerjs = new function() {
 		this.code.create();
 		this._theme.create();
 		
+		this._href.create();
+
 		this.grid.create();
 		this.table.create();
-		this.fixed.create();
 
 		this.tab.create();
 		this.popup.create();
 		this.slide.create();
+
+		this.fixed.create();
 	}
 
 	this._resize = function() {
@@ -79,6 +82,16 @@ stylizerjs.code = new function() {
 		var splittext = text.split('\n');
 		var html = '';
 		var firstTabCount = -1;
+
+		var tabText = '';
+
+		if( $(obj).attr('tab-space') != null ) {
+			for(var i = 0 ; i < $(obj).attr('tab-space') ; i++)
+				tabText += '&nbsp;';
+		} else {
+			tabText = '&nbsp;&nbsp;&nbsp;&nbsp;';
+		}
+
 		for(var i=0;i<splittext.length;i++) {
 			if(splittext[i].length == 0)
 				continue;
@@ -88,7 +101,7 @@ stylizerjs.code = new function() {
 				firstTabCount = tabCount;
 			} else {
 				for(var j=0;j<tabCount-firstTabCount;j++)
-					html += '&nbsp;&nbsp;&nbsp;&nbsp;';
+					html += tabText;
 				html += $(obj).text(splittext[i]).html();
 			}
 
@@ -158,6 +171,21 @@ stylizerjs.grid = new function() {
 					_this_colspan = $(this).attr('colspan')*1;
 				var _this_width = _gird_width * _this_colspan / colspans;
 				$(this).width(_this_width);
+			});
+		});
+	}
+}
+
+/* href.js */
+stylizerjs._href = new function() {
+	this.create = function() {
+		$('[href]').each(function() {
+			if($(this).prop('tagName') == 'A') return;
+			$(this).click(function() {
+				if($(this).attr('new-window') == null)
+					$(location).attr('href', $(this).attr('href'));
+				else
+					window.open($(this).attr('href'));
 			});
 		});
 	}
@@ -286,6 +314,7 @@ stylizerjs.tab = new function() {
 	this.create = function() {
 		$('tab').each(function(){
 			var _tab_name = $(this).attr('tab-id');
+			stylizerjs._theme.tab($(this));
 			if(_tab_name!=null) {
 				$('tab[tab-id="'+_tab_name+'"] > menu').each(function(){
 					var _menu_name = $(this).attr('tab-id');
@@ -462,6 +491,8 @@ stylizerjs.table = new function() {
 
 /* theme.js */
 stylizerjs._theme = new function() {
+	this.components = ['button','panel','table','tab','nav','popup','slide'];
+
 	this.create = function() {
 		this.setDefault();
 	}
@@ -473,6 +504,12 @@ stylizerjs._theme = new function() {
 		});
 
 		// Apply Theme
+		$('[theme]').each(function(){
+			for(var i=0; i<stylizerjs._theme.components.length;i++)
+				if($(this).prop('tagName').toLowerCase() == stylizerjs._theme.components[i]) return;
+			stylizerjs._theme.setTheme($(this).attr('theme'),$(this),'basics', $(this).prop('tagName').toLowerCase());
+		});
+
 		$('button').each(function() {
 			stylizerjs._theme.button($(this));
 		});
@@ -490,10 +527,8 @@ stylizerjs._theme = new function() {
 		var themeName = jqueryObj.attr('inner-theme');
 		if(themeName == null) 
 			return;
-
-		var components = ['button','panel','table','tab','nav','popup','slide'];
-		for(var i=0; i<components.length;i++) {
-			jqueryObj.find(components[i]).each(function() {
+		for(var i=0; i<stylizerjs._theme.components.length;i++) {
+			jqueryObj.find(stylizerjs._theme.components[i]).each(function() {
 				var setAvailable = true;
 				var isFirst = true;
 				$(this).parents().each(function(index) {
@@ -537,15 +572,6 @@ stylizerjs._theme = new function() {
 		}, function() {
 			stylizerjs._theme.setTheme(themeName,jqueryObj,'button','default');
 		});
-
-		if(jqueryObj.attr('href') != null) {
-			jqueryObj.click(function() {
-				if(jqueryObj.attr('new-window') == null)
-					$(location).attr('href', jqueryObj.attr('href'));
-				else
-					window.open(jqueryObj.attr('href'));
-			});
-		}
 	}
 
 	this.panel = function(jqueryObj) {
@@ -577,6 +603,16 @@ stylizerjs._theme = new function() {
 		var themeName = jqueryObj.attr('theme');
 	
 		stylizerjs._theme.setTheme(themeName,jqueryObj.find('> menu'),'tab','in-active');
+		
+		jqueryObj.find('> menu').each(function() {
+			if($(this).attr('tab-status')=='active') return;
+			$(this).hover(function() {
+				stylizerjs._theme.setTheme(themeName, $(this),'tab','hover');
+			}, function() {
+				stylizerjs._theme.setTheme(themeName, $(this),'tab','in-active');
+			});
+		});
+
 		stylizerjs._theme.setTheme(themeName,jqueryObj.find('> menu[tab-status="active"]'),'tab','default');
 	}
 
@@ -611,16 +647,6 @@ stylizerjs._theme = new function() {
 		}, function() {
 			stylizerjs._theme.setTheme(themeName,titleObj,'nav','title');
 		});
-
-		if(titleObj.attr('href') != null) {
-			titleObj.click(function() {
-				if(titleObj.attr('new-window') == null)
-					$(location).attr('href', titleObj.attr('href'));
-				else
-					window.open(titleObj.attr('href'));
-			});
-		}
-
 	}
 
 	this.setTheme = function(themeName, jqueryObj, style, status) {

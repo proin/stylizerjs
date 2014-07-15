@@ -2,6 +2,7 @@ stylizerjs.tab = new function() {
 	this.create = function() {
 		$('tab').each(function(){
 			var _tab_name = $(this).attr('tab-id');
+			stylizerjs._theme.tab($(this));
 			if(_tab_name!=null) {
 				$('tab[tab-id="'+_tab_name+'"] > menu').each(function(){
 					var _menu_name = $(this).attr('tab-id');

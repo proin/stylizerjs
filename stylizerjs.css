@@ -119,6 +119,7 @@ blockquote {
 }
 
 code {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 14px;
 	display: block;
 }
@@ -243,6 +244,13 @@ grid > column {
 	vertical-align: top;
 	margin: 0;
 	padding: 0;
+}
+
+@media (max-width: 768px) {
+	grid[inline] > column {
+		display: table;
+		width: 100%!important;
+	}	
 }
 
 /* nav.css */

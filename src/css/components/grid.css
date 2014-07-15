@@ -12,3 +12,10 @@ grid > column {
 	margin: 0;
 	padding: 0;
 }
+
+@media (max-width: 768px) {
+	grid[inline] > column {
+		display: table;
+		width: 100%!important;
+	}	
+}

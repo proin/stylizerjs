@@ -15,13 +15,16 @@ var stylizerjs = new function() {
 		this.code.create();
 		this._theme.create();
 		
+		this._href.create();
+
 		this.grid.create();
 		this.table.create();
-		this.fixed.create();
 
 		this.tab.create();
 		this.popup.create();
 		this.slide.create();
+
+		this.fixed.create();
 	}
 
 	this._resize = function() {
