@@ -14,15 +14,19 @@ var stylizerjs = new function() {
 	this._init = function() {
 		this.code.create();
 		this._theme.create();
-		this.tab.create();
+		
 		this.grid.create();
+		this.table.create();
 		this.fixed.create();
+
+		this.tab.create();
 		this.popup.create();
 		this.slide.create();
 	}
 
 	this._resize = function() {
 		this.grid.create();
+		this.table.create();
 		this.fixed.resize();
 	}
 

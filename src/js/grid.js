@@ -3,7 +3,7 @@ stylizerjs.grid = new function() {
 		$('grid').each(function(){
 			var colspans = 0;
 			var _gird_width = $(this).width();
-			$(this).children('column').each(function(){
+			$(this).find('> column').each(function(){
 				$(this).removeAttr('style');
 				$(this).removeAttr('class');
 				if($(this).attr('colspan')==null)
@@ -12,7 +12,7 @@ stylizerjs.grid = new function() {
 					colspans += $(this).attr('colspan')*1;
 			});
 			
-			$(this).children('column').each(function(){
+			$(this).find('> column').each(function(){
 				var _this_colspan = 1;
 				if($(this).attr('colspan')==null)
 					_this_colspan = 1;
