@@ -18,10 +18,6 @@ stylizerjs._theme = new function() {
 			stylizerjs._theme.panel($(this));
 		});
 
-		$('table').each(function() {
-			stylizerjs._theme.table($(this));
-		});
-
 		$('nav').each(function() {
 			stylizerjs._theme.nav($(this));
 		});
