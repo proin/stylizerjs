@@ -21,7 +21,7 @@ stylizerjs.popup = new function() {
 		$('popup-container').attr('style','visibility:visible;');
 		jqueryObj.attr('style','visibility:visible;position:absolute;');
 
-		$('body').css('overflow','hidden');
+		$('html,body').css('overflow','hidden');
 
 		stylizerjs._theme.popup(jqueryObj);
 
@@ -39,6 +39,6 @@ stylizerjs.popup = new function() {
 	this.hidden = function(jqueryObj) {
 		$('popup-container').attr('style','visibility:hidden;');
 		jqueryObj.attr('style','visibility:hidden;');
-		$('body').removeAttr('style');
+		$('html,body').removeAttr('style');
 	}
 }

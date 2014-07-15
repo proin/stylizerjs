@@ -7,7 +7,10 @@ stylizerjs.slide = new function() {
 
 		$('slide[slide-id]').each(function(){
 			stylizerjs.slide.slideSize[$(this).attr('slide-id')] = $(this).width();
-			stylizerjs.slide.hidden($(this));
+			
+			$(this).css('float','left');
+			$(this).css({width: 0, visibility: 'hidden', height: 0});
+
 			$('slide-container').append($(this));
 		});
 
@@ -22,38 +25,46 @@ stylizerjs.slide = new function() {
 
 	this.visible = function(jqueryObj) {
 		$('slide-container').attr('style','visibility:visible;');
-		jqueryObj.css({visibility: 'visible', height: 'auto'});
-		jqueryObj.animate({ width: stylizerjs.slide.slideSize[jqueryObj.attr('slide-id')]+'%' }, 500 );
-		$('body').css('overflow','hidden');
+		$('html,body').css('overflow','hidden');
 
+		jqueryObj.css({visibility: 'visible', height: 'auto'});
 		if(jqueryObj.attr('right') != null) 
 			jqueryObj.css('float','right');
-
-		if(jqueryObj.height() == $('slide-container').height())
-			$('slide-container').css('overflow','hidden');
-		else
-			$('slide-container').css('overflow','scroll');
-
+		
 		stylizerjs._theme.slide(jqueryObj);
 
-		$('[dismiss-slide]').each(function(){
-			$(this).click(function() {
+		jqueryObj.animate({
+			width: stylizerjs.slide.slideSize[jqueryObj.attr('slide-id')]+'%' 
+		}, 500 , function() {
+			if($('slide[slide-id="'+jqueryObj.attr('slide-id')+'"]').height() == $('slide-container').height())
+				$('slide-container').css('overflow','hidden');
+			else
+				$('slide-container').css('overflow','scroll');
+
+			$('[dismiss-slide]').each(function(){
+				$(this).click(function() {
+					stylizerjs.slide.hidden(jqueryObj);
+				});
+			});
+
+			$('slide-dissmiss-panel').click(function() {
 				stylizerjs.slide.hidden(jqueryObj);
 			});
-		});
-
-		$('slide-dissmiss-panel').click(function() {
-			stylizerjs.slide.hidden(jqueryObj);
 		});
 	}
 
 	this.hidden = function(jqueryObj) {
+		$('html,body').removeAttr('style');
 		$('slide-container').attr('style','visibility:hidden;');
+		
+		jqueryObj.css('float','left');
+		jqueryObj.css('visibility','hidden');
+		jqueryObj.css('height','0px');
+		jqueryObj.css('width','0px');
+
 		$('slide-container').animate({
 			scrollTop: 0
-		}, 0);
-		jqueryObj.css('float','left');
-		jqueryObj.css({width: 0, visibility: 'hidden', height: 0});
-		$('body').removeAttr('style');
+		}, 0, function() {
+		});
 	}
 }

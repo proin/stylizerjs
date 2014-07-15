@@ -143,6 +143,10 @@ stylizerjs._theme = new function() {
 		stylizerjs._theme.setTheme(themeName,jqueryObj,'nav','nav');
 		
 		stylizerjs._theme.setTheme(themeName,titleObj,'nav','title');
+
+		titleObj.attr('ondragstart','return false');
+		titleObj.attr('onselectstart','return false');
+
 		titleObj.hover(function() {
 			stylizerjs._theme.setTheme(themeName,titleObj,'nav','title-hover');
 		}, function() {
