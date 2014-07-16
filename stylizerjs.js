@@ -284,10 +284,10 @@ stylizerjs.slide = new function() {
 					stylizerjs.slide.hidden(jqueryObj);
 				});
 			});
+		});
 
-			$('slide-dissmiss-panel').click(function() {
-				stylizerjs.slide.hidden(jqueryObj);
-			});
+		$('slide-dissmiss-panel').click(function() {
+			stylizerjs.slide.hidden(jqueryObj);
 		});
 	}
 

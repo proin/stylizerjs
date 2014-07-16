@@ -63,9 +63,7 @@ stylizerjs.theme.push({
 		'body' : {
 			'background-color' : colors.white.represent,
 			'color' : colors.white.text,
-			'border-color' : colors.pastelblue.represent,
-			'margin-top' : '15px',
-			'margin-bottom' : '30px'
+			'border-color' : colors.pastelblue.represent
 		},
 		'footer' : {
 			'background-color' : colors.skyblue2.represent,
@@ -152,6 +150,17 @@ stylizerjs.theme.push({
 		},
 		'h1' : {
 			'color' : colors.deepblue.represent,
+			'border-bottom' : '1px solid '+colors.deepblue.represent
+		},
+		'h2' : {
+			'color' : colors.deepblue.represent,
+			'font-size' : '26px',
+			'margin' : '0 0 12px 0',
+			'border-bottom' : '1px solid '+colors.deepblue.represent
+		},
+		'h3' : {
+			'font-size' : '18px',
+			'margin' : '0 0 18px 0',
 			'border-bottom' : '1px solid '+colors.deepblue.represent
 		}
 	}
@@ -320,6 +329,40 @@ stylizerjs.theme.push(
 				'background-color' : colors.white.represent,
 				'color' : colors.greenblue.represent,
 				'border-color' : colors.greenblue.represent
+			}
+		}
+	}
+);
+
+stylizerjs.theme.push(
+	{
+		'name' : 'popup-example',
+		'table' : {
+			'wrapper' : {
+				'border' : '1px solid ' + colors.pastelblue.represent,
+				'background-color' : colors.white.represent,
+				'color' : colors.white.text
+			},
+			'header' : {
+				'background-color' : colors.pastelblue.represent,
+				'color' : colors.pastelblue.text
+			},
+			'odd-row' : {
+				'background-color' : colors.skyblue2.represent
+			}
+		},
+		'tab' : {
+			'default' : {
+				'background-color' : colors.pastelblue.represent,
+				'color' : colors.pastelblue.text
+			},
+			'in-active' : {
+				'background-color' : colors.skyblue1.represent,
+				'color' : colors.skyblue1.text
+			},
+			'hover' : {
+				'background-color' : colors.pastelblue.represent,
+				'color' : colors.pastelblue.text
 			}
 		}
 	}
