@@ -23,8 +23,8 @@ popup-dissmiss-panel {
 
 popup {
 	z-index: 1201;
-	width: 70%;
-	left: 15%;
+	width: 50%;
+	left: 25%;
 	background-color: #fff;
 	border: 1px solid #80ccc8;
 	display: inline-block;
@@ -36,6 +36,13 @@ popup {
 		-moz-box-shadow:7px 7px 7px silver;
 		-webkit-box-shadow:7px 7px 7px silver;
 		filter:progid:DXImageTransform.Microsoft.Shadow(color=silver,direction=135, strength=20);
+}
+
+@media (max-width: 768px) {
+	popup {
+		width: 80%;
+		left: 10%;
+	}
 }
 
 popup > header {
