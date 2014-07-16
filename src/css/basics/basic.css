@@ -17,7 +17,7 @@ body {
 
 context {
 	display: block;
-	margin: 20px;
+	padding: 20px;
 }
 
 a {
@@ -71,7 +71,7 @@ h5 > small,
 h6 > small {
 	font-weight: normal;
 	line-height: 1;
-	font-size: 75%;
+	font-size: 60%;
 	color: #999;
 }
 

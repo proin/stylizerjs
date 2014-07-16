@@ -4,8 +4,6 @@ stylizerjs.grid = new function() {
 			var colspans = 0;
 			var _gird_width = $(this).width();
 			$(this).find('> column').each(function(){
-				$(this).removeAttr('style');
-				$(this).removeAttr('class');
 				if($(this).attr('colspan')==null)
 					colspans += 1;
 				else

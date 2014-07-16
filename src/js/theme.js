@@ -109,19 +109,17 @@ stylizerjs._theme = new function() {
 
 	this.tab = function(jqueryObj) {
 		var themeName = jqueryObj.attr('theme');
-	
-		stylizerjs._theme.setTheme(themeName,jqueryObj.find('> menu'),'tab','in-active');
 		
+		stylizerjs._theme.setTheme(themeName,jqueryObj.find('> menu'),'tab','in-active');
+		stylizerjs._theme.setTheme(themeName,jqueryObj.find('> menu[tab-status="active"]'),'tab','default');
+
 		jqueryObj.find('> menu').each(function() {
-			if($(this).attr('tab-status')=='active') return;
 			$(this).hover(function() {
-				stylizerjs._theme.setTheme(themeName, $(this),'tab','hover');
+				if($(this).attr('tab-status')==null) stylizerjs._theme.setTheme(themeName, $(this),'tab','hover');
 			}, function() {
-				stylizerjs._theme.setTheme(themeName, $(this),'tab','in-active');
+				if($(this).attr('tab-status')==null) stylizerjs._theme.setTheme(themeName, $(this),'tab','in-active');
 			});
 		});
-
-		stylizerjs._theme.setTheme(themeName,jqueryObj.find('> menu[tab-status="active"]'),'tab','default');
 	}
 
 	this.popup = function(jqueryObj) {
@@ -165,7 +163,6 @@ stylizerjs._theme = new function() {
 			return;
 		if(theme[style].hasOwnProperty(status) == false)
 			return;
-
 		$.each(theme[style][status], function(k, v) {
 			jqueryObj.css(k, v);
 		});

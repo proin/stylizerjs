@@ -19,7 +19,7 @@ body {
 
 context {
 	display: block;
-	margin: 20px;
+	padding: 20px;
 }
 
 a {
@@ -73,7 +73,7 @@ h5 > small,
 h6 > small {
 	font-weight: normal;
 	line-height: 1;
-	font-size: 75%;
+	font-size: 60%;
 	color: #999;
 }
 
@@ -482,6 +482,22 @@ tab > menu {
 	cursor: pointer;
 }
 
+tab[tab-align="vertical"] > menu {
+	width: 100%;
+	height: auto;
+	display: inline-block;
+	padding: 10px 0px 10px 0px;
+}
+
+@media (max-width: 768px) {
+	tab[tab-align="auto"] > menu {
+		width: 100%;
+		height: auto;
+		display: inline-block;
+		padding: 10px 0px 10px 0px;
+	}
+}
+
 tabcontent {
 	margin: 0;
 	padding: 0;
@@ -503,16 +519,6 @@ tabcontent > menu[tab-status="active"] {
 	margin: 0;
 	position: relative;
 	visibility: visible;
-}
-
-/* Set Basic CSS */
-tab {
-	background-color: #d0ebf2;
-	color: #fff;
-}
-
-tab > menu[tab-status="active"] {
-	background-color: #8bcede;
 }
 
 /* table.css */

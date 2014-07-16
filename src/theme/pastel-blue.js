@@ -47,7 +47,7 @@ stylizerjs.theme.push({
 		'default' : {
 			'background-color' : colors.pastelblue.represent,
 			'color' : colors.pastelblue.text,
-			'border-color' : colors.pastelblue.border
+			'border-color' : colors.pastelblue.represent
 		},
 		'hover' : {
 			'background-color' : colors.deepblue.represent,
@@ -57,13 +57,15 @@ stylizerjs.theme.push({
 	},
 	'panel' : {
 		'header' : {
-			'background-color' : colors.pastelblue.represent,
-			'color' : colors.pastelblue.text
+			'background-color' : colors.deepblue.represent,
+			'color' : colors.deepblue.text
 		},
 		'body' : {
 			'background-color' : colors.white.represent,
 			'color' : colors.white.text,
-			'border-color' : colors.pastelblue.represent
+			'border-color' : colors.pastelblue.represent,
+			'margin-top' : '15px',
+			'margin-bottom' : '30px'
 		},
 		'footer' : {
 			'background-color' : colors.skyblue2.represent,
@@ -131,6 +133,26 @@ stylizerjs.theme.push({
 		},
 		'code' : {
 			'color' : colors.white.text
+		},
+		'mark' : {
+			'background-color' : colors.greenblue.represent,
+			'color' : colors.greenblue.text,
+			'padding' : '0px 6px 0px 6px'
+		},
+		'div.strengthen' : {
+			'font-size' : '22px'
+		},
+		'div.code' : {
+			'background-color' : colors.skyblue2.represent,
+			'padding' : '15px'
+		},
+		'div.explanation' : {
+			'background-color' : colors.white.represent,
+			'padding' : '15px'
+		},
+		'h1' : {
+			'color' : colors.deepblue.represent,
+			'border-bottom' : '1px solid '+colors.deepblue.represent
 		}
 	}
 });
@@ -144,7 +166,7 @@ stylizerjs.theme.push({
 			'background-color' : colors.pastelblue.represent,
 			'border' : '10px solid ' + colors.skyblue1.represent,
 			'font-size' : '150px',
-			'margin' : '60px',
+			'margin' : '30px 60px 60px 60px',
 			'padding' : '0 0 0 0',
 			'line-height' : '1'
 		},
@@ -278,6 +300,26 @@ stylizerjs.theme.push(
 				'background-color' : colors.deepblue.represent,
 				'color' : colors.deepblue.text,
 				'border-color' : colors.deepblue.represent
+			}
+		}
+	}
+);
+
+stylizerjs.theme.push(
+	{
+		'name' : 'popup-download',
+		'button' : {
+			'default' : {
+				'background-color' : colors.greenblue.represent,
+				'color' : colors.greenblue.text,
+				'border' : '2px solid ' + colors.greenblue.represent,
+				'border-radius' : '0px',
+				'width' : '100%'
+			},
+			'hover' : {
+				'background-color' : colors.white.represent,
+				'color' : colors.greenblue.represent,
+				'border-color' : colors.greenblue.represent
 			}
 		}
 	}
