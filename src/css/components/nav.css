@@ -15,6 +15,7 @@ nav > title {
 	font-size: 25px;
 	cursor: pointer;
 	float: left;
+	line-height: 1;
 }
 
 nav > title:hover {
