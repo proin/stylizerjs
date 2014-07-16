@@ -2,7 +2,7 @@ stylizerjs.grid = new function() {
 	this.create = function() {
 		$('grid').each(function(){
 			var colspans = 0;
-			var _gird_width = $(this).width();
+			var _gird_width = $(this).width() * 0.99;
 			$(this).find('> column').each(function(){
 				if($(this).attr('colspan')==null)
 					colspans += 1;

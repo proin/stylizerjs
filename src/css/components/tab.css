@@ -11,7 +11,7 @@ tab {
 
 tab > menu {
 	width: 1%;
-	height: 100%;
+	height: auto;
 	margin: 0px;
 	padding: 0px;
 	display: table-cell;
@@ -24,15 +24,19 @@ tab[tab-align="vertical"] > menu {
 	width: 100%;
 	height: auto;
 	display: inline-block;
-	padding: 10px 0px 10px 0px;
+	padding: 15px 0px 15px 0px;
 }
 
 @media (max-width: 768px) {
+	tab > menu {
+		padding: 15px 0px 15px 0px;
+	}
+
 	tab[tab-align="auto"] > menu {
 		width: 100%;
 		height: auto;
 		display: inline-block;
-		padding: 10px 0px 10px 0px;
+		padding: 15px 0px 15px 0px;
 	}
 }
 

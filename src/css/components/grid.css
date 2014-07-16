@@ -6,7 +6,7 @@ grid {
 }
 
 grid > column {
-	display: inline-block;
+	display: table-cell;
 	word-break: break-all;
 	vertical-align: top;
 	margin: 0;
