@@ -13,7 +13,7 @@ body {
 	border: 0;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 16px;
-	line-height: 1.2;
+	line-height: 1.4;
 	width: 100%;
 }
 
@@ -116,12 +116,6 @@ blockquote > footer:before {
 blockquote {
 	background: #d0ebf2;
 	border-left: 10px solid #8bcede;
-}
-
-code {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 14px;
-	display: block;
 }
 
 /* button.css */
@@ -230,6 +224,45 @@ select[disabled="true"]{
 }
 
 /* Components */
+/* code.css */
+code {
+	font-family: inherit;
+	display: inline-block;
+	word-break: break-all;
+}
+
+code[type="html"] c[type="tag"] {
+	font-weight: bold;
+	color: #00d;
+}
+
+code[type="html"] c[type="tagName"] {
+	font-weight: bold;
+	color: #00d;
+}
+
+code[type="html"] c[type="attrs"] {
+	color: #00d;
+}
+
+code[type="html"] c[type="attr-value"] {
+	color: #0a0;
+}
+
+code[type="html"] c[type="attr-equal"] {
+	color: #00d;
+}
+
+
+code[type="javascript"] c[type="keyword"] {
+	font-weight: bold;
+	color: #00d;
+}
+
+code[type="javascript"] c[type="string"] {
+	color: #0a0;
+}
+
 /* grid.css */
 grid {
 	display: table;

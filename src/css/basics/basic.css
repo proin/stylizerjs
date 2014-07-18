@@ -11,7 +11,7 @@ body {
 	border: 0;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 16px;
-	line-height: 1.2;
+	line-height: 1.4;
 	width: 100%;
 }
 
@@ -114,10 +114,4 @@ blockquote > footer:before {
 blockquote {
 	background: #d0ebf2;
 	border-left: 10px solid #8bcede;
-}
-
-code {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 14px;
-	display: block;
 }

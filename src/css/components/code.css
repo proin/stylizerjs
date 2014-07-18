@@ -1,0 +1,37 @@
+code {
+	font-family: inherit;
+	display: inline-block;
+	word-break: break-all;
+}
+
+code[type="html"] c[type="tag"] {
+	font-weight: bold;
+	color: #00d;
+}
+
+code[type="html"] c[type="tagName"] {
+	font-weight: bold;
+	color: #00d;
+}
+
+code[type="html"] c[type="attrs"] {
+	color: #00d;
+}
+
+code[type="html"] c[type="attr-value"] {
+	color: #0a0;
+}
+
+code[type="html"] c[type="attr-equal"] {
+	color: #00d;
+}
+
+
+code[type="javascript"] c[type="keyword"] {
+	font-weight: bold;
+	color: #00d;
+}
+
+code[type="javascript"] c[type="string"] {
+	color: #0a0;
+}

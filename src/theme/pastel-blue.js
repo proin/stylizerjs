@@ -129,9 +129,6 @@ stylizerjs.theme.push({
 			'color' : colors.skyblue2.text,
 			'border-left' : '10px solid ' + colors.pastelblue.represent
 		},
-		'code' : {
-			'color' : colors.white.text
-		},
 		'mark' : {
 			'background-color' : colors.greenblue.represent,
 			'color' : colors.greenblue.text,
@@ -141,7 +138,7 @@ stylizerjs.theme.push({
 			'font-size' : '22px'
 		},
 		'div.code' : {
-			'background-color' : colors.skyblue2.represent,
+			'background-color' : '#f7f7f7',
 			'padding' : '15px'
 		},
 		'div.explanation' : {
@@ -149,14 +146,19 @@ stylizerjs.theme.push({
 			'padding' : '15px'
 		},
 		'h1' : {
-			'color' : colors.deepblue.represent,
-			'border-bottom' : '1px solid '+colors.deepblue.represent
+			'color' : colors.deepblue.text,
+			'background-color' : colors.deepblue.represent,
+			'border-bottom' : '0px solid '+colors.deepblue.represent,
+			'margin' : '0 0 24px 0',
+			'padding' : '0 0 0 12px'
+		},
+		'h1>small' : {
+			'color' : colors.skyblue2.represent
 		},
 		'h2' : {
-			'color' : colors.deepblue.represent,
 			'font-size' : '26px',
 			'margin' : '0 0 12px 0',
-			'border-bottom' : '1px solid '+colors.deepblue.represent
+			'border-bottom' : '0px solid '+colors.deepblue.represent
 		},
 		'h3' : {
 			'font-size' : '18px',
@@ -209,7 +211,7 @@ stylizerjs.theme.push({
 			'background-color' : colors.white.represent,
 			'color' : colors.white.text,
 			'border' : '0px',
-			'margin' : '0px 40px 40px 40px'
+			'margin' : '0px 20px 40px 20px'
 		},
 		'footer' : {
 			'background-color' : colors.skyblue2.represent,
@@ -245,11 +247,6 @@ stylizerjs.theme.push({
 		},
 		'a' : {
 			'color' : colors.white.represent
-		},
-		'code' : {
-			'color' : colors.white.text
-			// 'background-color' : '#eee',
-			// 'padding' : '5px'
 		}
 	}
 });
