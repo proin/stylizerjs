@@ -1,4 +1,4 @@
 stylizerjs
 ==========
 
-http://stylizerjs.moblab.co.kr
+http://stylizerjs.org
