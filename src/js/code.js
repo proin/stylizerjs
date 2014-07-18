@@ -47,8 +47,8 @@ stylizerjs.code = new function() {
 
 	this.codeHighlight = {
 		'html' : function(code) {
-			var result = code.replace(/\t/gi, '').replace(/=""/gi, '');
-
+			var result = code.replace(/\t/gi, '').replace(/=""/gi, '').replace(/&amp;gt;/gi, '&gt;').replace(/&amp;lt;/gi, '&lt;');
+	
 			result = result.replace(/(&lt;)([^&]+)/g, '<c type="tag">$1</c><c type="attrs">$2</c>');
 			result = result.replace(/&gt;/g, '<c type="tag">&gt;</c>');
 			

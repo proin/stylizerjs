@@ -5,9 +5,17 @@ stylizerjs.tab = new function() {
 			stylizerjs._theme.tab($(this));
 			if(_tab_name!=null) {
 				$('tab[tab-id="'+_tab_name+'"] > menu').each(function(){
-					var _menu_name = $(this).attr('tab-id');
+					var checkParent = 0;
+					var top = 0;
 					
-					if($(this).attr('tab-status') == 'active') {
+					$(this).parents().each(function() {
+						if($(this).attr('tab-status') == 'active') checkParent++;
+						if($(this).prop('tagName').toLowerCase() == 'tabcontent') top++;
+					});
+
+					var _menu_name = $(this).attr('tab-id');
+					console.log(_tab_name, checkParent, top);
+					if($(this).attr('tab-status') == 'active' && (checkParent != 0 || top == 0)) {
 						stylizerjs.tab.select(_tab_name, _menu_name);
 					}
 					

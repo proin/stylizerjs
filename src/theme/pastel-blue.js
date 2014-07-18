@@ -138,7 +138,12 @@ stylizerjs.theme.push({
 			'font-size' : '22px'
 		},
 		'div.code' : {
-			'background-color' : '#f7f7f7',
+			'background-color' : '#f7f7f9',
+			'padding' : '15px'
+		},
+		'div.tree' : {
+			'background-color' : '#f7f7f9',
+			'line-height' : '1',
 			'padding' : '15px'
 		},
 		'div.explanation' : {
@@ -149,8 +154,9 @@ stylizerjs.theme.push({
 			'color' : colors.deepblue.text,
 			'background-color' : colors.deepblue.represent,
 			'border-bottom' : '0px solid '+colors.deepblue.represent,
-			'margin' : '0 0 24px 0',
-			'padding' : '0 0 0 12px'
+			'font-size' : '36px',
+			'margin' : '0 0 0 0',
+			'padding' : '7px 0 7px 20px'
 		},
 		'h1>small' : {
 			'color' : colors.skyblue2.represent

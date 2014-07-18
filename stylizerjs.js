@@ -119,8 +119,8 @@ stylizerjs.code = new function() {
 
 	this.codeHighlight = {
 		'html' : function(code) {
-			var result = code.replace(/\t/gi, '').replace(/=""/gi, '');
-
+			var result = code.replace(/\t/gi, '').replace(/=""/gi, '').replace(/&amp;gt;/gi, '&gt;').replace(/&amp;lt;/gi, '&lt;');
+	
 			result = result.replace(/(&lt;)([^&]+)/g, '<c type="tag">$1</c><c type="attrs">$2</c>');
 			result = result.replace(/&gt;/g, '<c type="tag">&gt;</c>');
 			
@@ -368,9 +368,17 @@ stylizerjs.tab = new function() {
 			stylizerjs._theme.tab($(this));
 			if(_tab_name!=null) {
 				$('tab[tab-id="'+_tab_name+'"] > menu').each(function(){
-					var _menu_name = $(this).attr('tab-id');
+					var checkParent = 0;
+					var top = 0;
 					
-					if($(this).attr('tab-status') == 'active') {
+					$(this).parents().each(function() {
+						if($(this).attr('tab-status') == 'active') checkParent++;
+						if($(this).prop('tagName').toLowerCase() == 'tabcontent') top++;
+					});
+
+					var _menu_name = $(this).attr('tab-id');
+					console.log(_tab_name, checkParent, top);
+					if($(this).attr('tab-status') == 'active' && (checkParent != 0 || top == 0)) {
 						stylizerjs.tab.select(_tab_name, _menu_name);
 					}
 					
